@@ -12,12 +12,12 @@ class ProjectWork {
   val file = scala.io.Source.fromFile("/Users/harikanththatikonda/Downloads/CDR.csv")
   var lines=file.getLines()
   var i=0
-      lines.foreach(processLine)
+      lines.foreach(processCallData)
      val resMap=ListMap(map.toSeq.sortWith(_._2>_._2):_*).iterator.slice(0, 10)
       resMap
   }
   
-  def processLine(str: String)={
+  def processCallData(str: String) = {
     val arr=str.split(",")
     if(arr(3).equalsIgnoreCase("0x829F08")){
       val intialcount =1
